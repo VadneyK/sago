@@ -45,9 +45,7 @@ npm install
 
 ### Run Demo
 ```bash
-npm run dev
-# or
-python main.py
+npm start
 
 # Open http://localhost:3000
 ```
@@ -366,7 +364,7 @@ Notes:
 
 ---
 
-## 🧪 Testing
+## 🧪 Future Testing
 
 ```bash
 # Run unit tests
@@ -405,7 +403,7 @@ npm run test:personalization
 
 ---
 
-## 📂 Project Structure
+## 📂 Future Project Structure
 
 ```
 sago-pitch-deck-analyzer/
@@ -491,15 +489,6 @@ sago-pitch-deck-analyzer/
 - Verification can take 10-15 minutes with deep analysis
 - User doesn't need to wait - Sago works in background
 - Enables batch processing during off-hours
-
----
-
-## 📞 Contact
-
-**Questions about this submission?**  
-[Your Name]  
-[Your Email]  
-[Your GitHub]
 
 ---
 
