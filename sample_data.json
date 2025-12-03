@@ -1,0 +1,442 @@
+{
+  "sample_scenario": {
+    "description": "Investor receives pitch deck from TechFlow AI via Gmail",
+    "date": "2024-12-03T09:15:00Z"
+  },
+  
+  "input_1_pitch_deck_metadata": {
+    "source": "Gmail",
+    "sender": "founder@techflow.ai",
+    "subject": "TechFlow AI - Series A Deck",
+    "attachment": "TechFlow_Series_A_Dec2024.pdf",
+    "company_name": "TechFlow AI",
+    "stage": "Series A",
+    "asking": "$5M at $20M pre-money valuation"
+  },
+  
+  "input_2_extracted_claims": {
+    "company": "TechFlow AI",
+    "extraction_timestamp": "2024-12-03T09:16:30Z",
+    "claims": [
+      {
+        "id": "claim_001",
+        "type": "revenue",
+        "claim_text": "$2M ARR",
+        "value": 2000000,
+        "unit": "USD",
+        "metric": "ARR",
+        "slide_number": 5,
+        "context": "Mentioned in 'Traction' slide alongside growth metrics",
+        "timestamp_reference": "Q3 2024"
+      },
+      {
+        "id": "claim_002",
+        "type": "growth",
+        "claim_text": "Growing at 40% MoM",
+        "value": 40,
+        "unit": "percent",
+        "metric": "MoM_growth",
+        "slide_number": 3,
+        "context": "Graph showing revenue growth over last 6 months",
+        "timestamp_reference": "Last 3 months"
+      },
+      {
+        "id": "claim_003",
+        "type": "customers",
+        "claim_text": "Partnerships with 3 Fortune 500 companies",
+        "value": 3,
+        "unit": "count",
+        "metric": "enterprise_customers",
+        "slide_number": 7,
+        "context": "Customer logos slide with 'Fortune 500 Partners' header",
+        "timestamp_reference": "Current"
+      },
+      {
+        "id": "claim_004",
+        "type": "users",
+        "claim_text": "10,000+ users",
+        "value": 10000,
+        "unit": "count",
+        "metric": "total_users",
+        "slide_number": 4,
+        "context": "User growth chart",
+        "timestamp_reference": "November 2024"
+      },
+      {
+        "id": "claim_005",
+        "type": "market",
+        "claim_text": "$50B TAM by 2027",
+        "value": 50000000000,
+        "unit": "USD",
+        "metric": "TAM",
+        "slide_number": 2,
+        "context": "Market opportunity slide citing 'workflow automation market'",
+        "timestamp_reference": "2027 projection"
+      }
+    ]
+  },
+  
+  "output_1_verification_results": {
+    "company": "TechFlow AI",
+    "verification_timestamp": "2024-12-03T09:30:00Z",
+    "overall_confidence_score": 58,
+    "processing_time_seconds": 142,
+    "claims_analysis": [
+      {
+        "claim_id": "claim_001",
+        "claim": "$2M ARR",
+        "status": "partially_verified",
+        "confidence": 60,
+        "verification_sources": [
+          {
+            "source": "Crunchbase",
+            "date_accessed": "2024-12-03",
+            "data_found": "$500K seed round raised May 2024",
+            "relevance_score": 85,
+            "reasoning": "Using typical burn rates ($30-50K/month for 10-person team), revenue should be $40-60K MRR ($480K-$720K ARR) to maintain 18-24 month runway"
+          },
+          {
+            "source": "Company Website - Pricing Page",
+            "date_accessed": "2024-12-03",
+            "data_found": "Three pricing tiers: $99/mo, $249/mo, $499/mo",
+            "relevance_score": 75,
+            "reasoning": "To reach $2M ARR ($167K MRR), would need ~200-500 customers depending on tier mix. This is aggressive for 6-month post-seed company"
+          },
+          {
+            "source": "LinkedIn Company Page",
+            "date_accessed": "2024-12-03",
+            "data_found": "12 employees listed",
+            "relevance_score": 60,
+            "reasoning": "Team size suggests early stage, typically $100-200K ARR per employee at this stage = $1.2-2.4M ARR range"
+          }
+        ],
+        "final_assessment": "Revenue claim is likely inflated. Evidence points to $1-1.5M ARR being more realistic. Gap may be due to: (a) including committed but not yet recognized revenue, (b) annualizing a strong recent month, or (c) including services revenue",
+        "recommendation": "HIGH PRIORITY: Request detailed revenue breakdown and customer cohort analysis"
+      },
+      {
+        "claim_id": "claim_002",
+        "claim": "Growing at 40% MoM",
+        "status": "verified",
+        "confidence": 85,
+        "verification_sources": [
+          {
+            "source": "LinkedIn - Employee Growth",
+            "date_accessed": "2024-12-03",
+            "data_found": "Team grew from 5 employees (Aug 2024) to 12 employees (Nov 2024)",
+            "relevance_score": 90,
+            "reasoning": "140% team growth over 3 months strongly correlates with revenue growth at seed stage. Companies don't hire aggressively unless revenue supports it"
+          },
+          {
+            "source": "Twitter/X - Founder Posts",
+            "date_accessed": "2024-12-03",
+            "data_found": "Founder announced '3 new team members' in Sept, '2 more joined' in Oct",
+            "relevance_score": 80,
+            "reasoning": "Public hiring announcements confirm rapid scaling consistent with 40% MoM growth claim"
+          },
+          {
+            "source": "AngelList Jobs",
+            "date_accessed": "2024-12-03",
+            "data_found": "5 open positions posted in last 30 days",
+            "relevance_score": 70,
+            "reasoning": "Aggressive hiring plans indicate confidence in continued growth"
+          }
+        ],
+        "final_assessment": "Growth rate claim appears credible. Multiple independent signals (team expansion, hiring velocity, founder communications) support strong growth trajectory",
+        "recommendation": "Request MRR chart to confirm growth is revenue-based, not just user signups"
+      },
+      {
+        "claim_id": "claim_003",
+        "claim": "Partnerships with 3 Fortune 500 companies",
+        "status": "unverified",
+        "confidence": 30,
+        "verification_sources": [
+          {
+            "source": "Google News Search",
+            "date_accessed": "2024-12-03",
+            "data_found": "No press releases or news articles about Fortune 500 partnerships",
+            "relevance_score": 95,
+            "reasoning": "Major partnerships with Fortune 500 companies are typically announced publicly for credibility and marketing value"
+          },
+          {
+            "source": "Company Blog",
+            "date_accessed": "2024-12-03",
+            "data_found": "Sept 2024 post mentions 'pilot program with two enterprise customers in financial services'",
+            "relevance_score": 85,
+            "reasoning": "Blog describes pilots with mid-market companies (described as '500-1000 employees'), not Fortune 500"
+          },
+          {
+            "source": "LinkedIn - Customer Stories",
+            "date_accessed": "2024-12-03",
+            "data_found": "No case studies or testimonials from Fortune 500 companies",
+            "relevance_score": 75,
+            "reasoning": "Companies typically showcase major customer wins on LinkedIn. Absence is notable"
+          }
+        ],
+        "final_assessment": "No evidence of Fortune 500 partnerships found. Likely scenarios: (a) pilots or POCs misrepresented as partnerships, (b) using 'partnership' loosely for trials, (c) confidential agreements (less likely for 3 separate deals)",
+        "recommendation": "CRITICAL: Request customer reference calls and clarify contract types (pilot vs revenue-generating). This claim significantly impacts enterprise validation thesis"
+      },
+      {
+        "claim_id": "claim_004",
+        "claim": "10,000+ users",
+        "status": "flagged",
+        "confidence": 40,
+        "verification_sources": [
+          {
+            "source": "SimilarWeb",
+            "date_accessed": "2024-12-03",
+            "data_found": "~2,000 monthly active users, 8,000 monthly visits",
+            "relevance_score": 95,
+            "reasoning": "Web traffic data shows 5x lower engagement than claimed user count. Significant discrepancy"
+          },
+          {
+            "source": "Chrome Web Store",
+            "date_accessed": "2024-12-03",
+            "data_found": "Browser extension has 847 installs",
+            "relevance_score": 80,
+            "reasoning": "If 10,000+ users, extension adoption would typically be 10-30% = 1,000-3,000 installs"
+          },
+          {
+            "source": "App Store & Google Play",
+            "date_accessed": "2024-12-03",
+            "data_found": "No mobile apps found",
+            "relevance_score": 60,
+            "reasoning": "All users must be web-based, making traffic discrepancy more significant"
+          }
+        ],
+        "final_assessment": "Major discrepancy between claimed users and traffic data. Likely explanations: (a) '10,000+' refers to total signups, not active users, (b) definition includes trial accounts or churned users, (c) bot/spam accounts inflating numbers",
+        "recommendation": "HIGH PRIORITY: Clarify user definition. Request DAU/WAU/MAU breakdown, activation rate, and retention cohorts"
+      },
+      {
+        "claim_id": "claim_005",
+        "claim": "$50B TAM by 2027",
+        "status": "verified",
+        "confidence": 90,
+        "verification_sources": [
+          {
+            "source": "Gartner Market Research",
+            "date_accessed": "2024-12-03",
+            "data_found": "Workflow automation software market projected at $47B by 2027",
+            "relevance_score": 98,
+            "reasoning": "Reputable market research firm with nearly identical TAM figure"
+          },
+          {
+            "source": "Forrester Research",
+            "date_accessed": "2024-12-03",
+            "data_found": "Digital workflow market to reach $52B by 2028",
+            "relevance_score": 90,
+            "reasoning": "Second credible source confirms TAM in similar range"
+          }
+        ],
+        "final_assessment": "TAM claim is accurate and well-supported by major research firms",
+        "recommendation": "Low priority. Focus on SAM and SOM instead of TAM"
+      }
+    ],
+    "competitive_intelligence": {
+      "competitors_mentioned_in_deck": [],
+      "competitors_identified": [
+        {
+          "name": "Notion AI",
+          "launched": "2023-02",
+          "user_base": "35M+",
+          "funding": "$343M total",
+          "relevance": "Direct competitor in AI-powered workspace"
+        },
+        {
+          "name": "ClickUp AI",
+          "launched": "2023-04",
+          "user_base": "10M+",
+          "funding": "$537M total",
+          "relevance": "Project management with AI features"
+        },
+        {
+          "name": "Monday.com AI",
+          "launched": "2023-09",
+          "user_base": "20M+",
+          "funding": "Public company (NASDAQ: MNDY)",
+          "relevance": "Work OS with recent AI integration"
+        },
+        {
+          "name": "Asana Intelligence",
+          "launched": "2023-11",
+          "user_base": "142K+ paying customers",
+          "funding": "Public company (NYSE: ASAN)",
+          "relevance": "Established player adding AI capabilities"
+        }
+      ],
+      "competitive_analysis": "Deck completely omits competitive landscape. All major players in workflow automation have launched AI features in past 18 months. This is concerning for market awareness and defensibility claims.",
+      "red_flag": true
+    }
+  },
+  
+  "output_2_personalized_questions": {
+    "investor_profile": {
+      "name": "John Smith",
+      "firm": "Acme Ventures",
+      "investment_thesis": [
+        "B2B SaaS",
+        "Enterprise distribution advantage",
+        "Strong unit economics (CAC payback < 18 months)",
+        "Defensible moats"
+      ],
+      "past_investments": ["WorkOS", "Retool", "Vanta", "Clerk"],
+      "typical_check_size": "$2-5M",
+      "stage_focus": "Series A"
+    },
+    "questions_generated": [
+      {
+        "id": "q1",
+        "category": "Revenue Verification",
+        "priority": "high",
+        "question": "Can you walk me through your revenue breakdown? I'm seeing public data that suggests you might be closer to $1-1.5M ARR rather than $2M. What's driving the difference?",
+        "internal_rationale": "Verification confidence only 60%. Large gap between claimed and estimated revenue. Critical for valuation.",
+        "personalization_factors": [
+          "User previously passed on deal due to revenue misrepresentation (XYZ Corp, 2023)",
+          "User always validates revenue early in diligence (pattern from last 8 deals)",
+          "Asked similar question during WorkOS diligence"
+        ],
+        "suggested_follow_up": "Request Stripe/payment processor dashboard access"
+      },
+      {
+        "id": "q2",
+        "category": "Customer Claims",
+        "priority": "high",
+        "question": "You mentioned partnerships with 3 Fortune 500 companies. Can you share which companies these are and whether these are pilots, POCs, or revenue-generating contracts?",
+        "internal_rationale": "Claim unverified with only 30% confidence. No public evidence found. Material for enterprise thesis validation.",
+        "personalization_factors": [
+          "Enterprise distribution is explicit criterion in user's thesis",
+          "Portfolio heavily weighted toward enterprise SaaS (75% of investments)",
+          "User's firm published blog post on 'Signs of Enterprise-Ready Startups' emphasizing validated enterprise sales"
+        ],
+        "suggested_follow_up": "Request customer reference calls with Fortune 500 contacts"
+      },
+      {
+        "id": "q3",
+        "category": "User Metrics",
+        "priority": "high",
+        "question": "Your deck shows 10,000+ users. What's your definition here - total signups, active users, or paying users? Traffic data suggests lower engagement than this number would imply.",
+        "internal_rationale": "Flagged claim with 40% confidence. 5x discrepancy with web traffic data. Critical for understanding retention.",
+        "personalization_factors": [
+          "User asks about activation/retention in 90% of initial meetings (pattern analysis)",
+          "Past investment memo for Retool emphasized 'clarity on user definitions'",
+          "User previously passed on deal with similar user metric ambiguity"
+        ],
+        "suggested_follow_up": "Request cohort retention analysis and DAU/MAU ratio"
+      },
+      {
+        "id": "q4",
+        "category": "Competitive Landscape",
+        "priority": "medium",
+        "question": "I noticed you didn't mention Notion AI, ClickUp AI, or Monday.com's recent AI features in your competitive analysis. How do you think about competing with these established players who already have large user bases and distribution?",
+        "internal_rationale": "Deck omits all major competitors. Raises questions about market awareness and defensibility. User's thesis emphasizes defensible moats.",
+        "personalization_factors": [
+          "User's thesis doc explicitly mentions 'sustainable competitive advantages' as key criterion",
+          "User invested in both Notion and Retool (adjacent/competitive space), has deep market knowledge",
+          "User asked similar competitive positioning questions in 100% of last 10 deals"
+        ],
+        "suggested_follow_up": "Request product roadmap and differentiation strategy doc"
+      },
+      {
+        "id": "q5",
+        "category": "Unit Economics",
+        "priority": "medium",
+        "question": "What does your CAC payback period look like currently, and how do you see that evolving as you scale? What's been your primary customer acquisition channel?",
+        "internal_rationale": "User's thesis explicitly requires CAC payback < 18 months. Deck doesn't address this. Need clarity on GTM efficiency.",
+        "personalization_factors": [
+          "CAC payback < 18 months is non-negotiable criterion in user's investment memo template",
+          "User passed on 3 deals in 2024 due to poor unit economics",
+          "Asked this question verbatim in Vanta and WorkOS diligence"
+        ],
+        "suggested_follow_up": "Request unit economics model with CAC, LTV, payback period"
+      },
+      {
+        "id": "q6",
+        "category": "Team & Execution",
+        "priority": "low",
+        "question": "I see you've scaled the team significantly in the last 3 months (5 to 12 people). What key roles are you still hiring for, and how are you thinking about maintaining culture and execution velocity during this growth phase?",
+        "internal_rationale": "Rapid hiring is positive signal but raises org scaling questions. Lower priority given user's focus on product-market fit at this stage.",
+        "personalization_factors": [
+          "User asks team questions in only 40% of initial meetings (lower priority)",
+          "User's past investment memos focus more on product and GTM than team scaling",
+          "Included for completeness, not deal-critical"
+        ],
+        "suggested_follow_up": "Optional: Request org chart and 12-month hiring plan"
+      }
+    ],
+    "email_draft_metadata": {
+      "tone": "warm_but_direct",
+      "length": "medium_400_words",
+      "style_notes": "User typically uses contractions, starts with appreciation, asks 3-5 questions in first email, ends with clear next step (call)",
+      "personalization_applied": true
+    }
+  },
+  
+  "output_3_automated_actions": {
+    "timestamp": "2024-12-03T09:35:00Z",
+    "actions_executed": [
+      {
+        "action_type": "slack_post",
+        "channel": "#deal-flow",
+        "status": "completed",
+        "message_id": "1733220900.123456",
+        "content": "🔔 New Pitch Deck Analyzed: TechFlow AI\n\n📊 Verification Summary:\n✅ Growth rate (40% MoM) - Verified (85% confidence)\n⚠️ Revenue ($2M ARR) - Partially verified (60% confidence)\n🚩 Fortune 500 partnerships - Unverified (30% confidence)\n🚩 User count (10,000+) - Flagged for discrepancy (40% confidence)\n\n🎯 Key Insights:\n• 7 major competitors not mentioned in deck\n• Revenue likely $1-1.5M based on public data\n• Enterprise partnerships need validation\n\n📋 6 personalized questions generated based on @john's investment thesis\n\n🔗 Full Report: https://drive.google.com/techflow-verification-report\n✉️ Draft email created in Gmail\n\nReact with 👍 to schedule partner meeting or 👎 to pass"
+      },
+      {
+        "action_type": "gmail_draft",
+        "status": "completed",
+        "draft_id": "r-1234567890",
+        "recipient": "founder@techflow.ai",
+        "subject": "Re: TechFlow AI - Follow-up Questions",
+        "preview": "Hi [Founder Name], Thank you for sharing the TechFlow deck earlier today. I'm intrigued by your approach to AI-powered workflow automation..."
+      },
+      {
+        "action_type": "google_drive_upload",
+        "status": "completed",
+        "file_id": "1a2b3c4d5e",
+        "file_name": "TechFlow_AI_Verification_Report_2024-12-03.pdf",
+        "folder": "Deal Flow/Series A/2024 Q4",
+        "permissions": "shared_with_team"
+      },
+      {
+        "action_type": "crm_update",
+        "status": "completed",
+        "crm_system": "Affinity",
+        "company_id": "12345",
+        "updates": {
+          "stage": "Diligence - Verification",
+          "last_activity": "Pitch deck analyzed via Sago",
+          "next_step": "Await founder response to verification questions",
+          "priority": "Medium",
+          "notes": "Strong growth signals but revenue and partnership claims need clarification. Competitive landscape crowded. Aligns with enterprise SaaS thesis."
+        }
+      },
+      {
+        "action_type": "calendar_hold",
+        "status": "suggested",
+        "title": "TechFlow AI - Follow-up Call",
+        "duration_minutes": 30,
+        "suggested_times": [
+          "2024-12-05T14:00:00Z",
+          "2024-12-05T16:00:00Z",
+          "2024-12-06T15:00:00Z"
+        ],
+        "action_required": "User approval needed before sending calendar invite"
+      }
+    ]
+  },
+  
+  "metadata": {
+    "system_version": "0.1.0-prototype",
+    "total_processing_time_seconds": 185,
+    "api_calls_made": {
+      "anthropic_claude": 3,
+      "google_gmail": 2,
+      "google_drive": 2,
+      "slack": 1,
+      "crunchbase": 1,
+      "similarweb": 1,
+      "brave_search": 8
+    },
+    "cost_estimate_usd": 0.47,
+    "confidence_calibration_note": "Confidence scores are calibrated based on historical verification accuracy. Scores above 80% have been validated as correct in >85% of past cases."
+  }
+}
