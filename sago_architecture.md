@@ -1,7 +1,11 @@
 # Sago Pitch Deck Intelligence System - Architecture
 
+> **⚠️ IMPORTANT**: This document describes the **proposed architecture** for a production system. The current implementation (`/sago-demo`) is a **UI prototype only** that demonstrates the user experience with mock data. None of the backend services, APIs, or intelligence features described below are actually built.
+
 ## Overview
-This system implements Use Case 2: automated pitch deck verification and personalized question generation. It demonstrates all three core Sago principles: Seamless Integration, Hyper-Personalization, and True Agency.
+This document outlines the architecture for implementing Use Case 2: automated pitch deck verification and personalized question generation. It would demonstrate all three core Sago principles: Seamless Integration, Hyper-Personalization, and True Agency.
+
+**Current Status**: Architecture design and UI prototype complete. Backend implementation required.
 
 ---
 
@@ -20,9 +24,11 @@ Pitch Deck Source (Gmail/Slack/Drive)
 
 ---
 
-## Core Components
+## Core Components (Proposed)
 
-### 1. **Ingestion Layer** (Seamless Integration)
+> **Status**: All components below are **architectural proposals**. None are implemented beyond the UI mockup.
+
+### 1. **Ingestion Layer** (Seamless Integration) - *Not Implemented*
 **Purpose:** Connect to existing workflows without new interfaces
 
 **Components:**
@@ -40,7 +46,7 @@ Pitch Deck Source (Gmail/Slack/Drive)
 
 ---
 
-### 2. **Claim Extraction Engine**
+### 2. **Claim Extraction Engine** - *Not Implemented*
 **Purpose:** Identify verifiable claims from pitch decks
 
 **Process:**
@@ -65,7 +71,7 @@ Pitch Deck Source (Gmail/Slack/Drive)
 
 ---
 
-### 3. **Verification Engine**
+### 3. **Verification Engine** - *Not Implemented*
 **Purpose:** Cross-reference claims with public data sources
 
 **Data Sources:**
@@ -102,7 +108,7 @@ for claim in claims:
 
 ---
 
-### 4. **Personalization Engine** (Hyper-Personalization)
+### 4. **Personalization Engine** (Hyper-Personalization) - *Not Implemented*
 **Purpose:** Tailor analysis and questions to investor's thesis and history
 
 **User Profile Building:**
@@ -143,7 +149,7 @@ personalized_questions = generate_questions(
 
 ---
 
-### 5. **Question Generation Engine**
+### 5. **Question Generation Engine** - *Not Implemented*
 **Purpose:** Create insightful, personalized due diligence questions
 
 **Approach:**
@@ -171,7 +177,7 @@ personalized_questions = generate_questions(
 
 ---
 
-### 6. **Action Execution Layer** (True Agency)
+### 6. **Action Execution Layer** (True Agency) - *Not Implemented*
 **Purpose:** Execute actions, not just provide information
 
 **Automated Actions:**
@@ -221,7 +227,9 @@ async def execute_actions(verification, questions, user):
 
 ---
 
-## Technical Stack
+## Technical Stack (Proposed)
+
+> **Note**: This tech stack would be used for production implementation. Current demo uses only React + TypeScript.
 
 ### Backend
 - **Runtime**: Node.js / Python FastAPI
@@ -299,6 +307,26 @@ async def execute_actions(verification, questions, user):
 - **Time Saved**: 2-3 hours → 10 minutes for initial diligence
 - **User Engagement**: >60% of generated questions used in founder calls
 - **Integration Seamlessness**: <2 clicks to go from deck receipt to action execution
+
+## Implementation Status Summary
+
+### What Exists Today
+- **UI Prototype** (`/sago-demo`): Complete React application demonstrating the full user experience
+- **Sample Data**: Mock verification results, questions, and competitive intelligence matching proposed schemas
+- **Design System**: Professional UI/UX with responsive design and proper state management
+- **Architecture Documentation**: This comprehensive technical specification
+
+### What Needs to be Built
+- **Everything else**: All backend services, APIs, databases, LLM integrations, and external connections
+- **Estimated Development**: 3-6 months for full production system with 2-3 engineers
+- **MVP Version**: Could start with basic LLM integration + web search in 4-6 weeks
+
+### Development Priority
+1. **Phase 1**: LLM integration for claim extraction (Claude API)
+2. **Phase 2**: Basic verification with web search + Crunchbase
+3. **Phase 3**: Gmail integration for document monitoring
+4. **Phase 4**: User profiles and personalization
+5. **Phase 5**: Full action execution (Slack, email drafts)
 
 ---
 

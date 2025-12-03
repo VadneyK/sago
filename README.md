@@ -25,30 +25,28 @@ See `system_architecture.pdf` for detailed design documentation.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (UI Demo Only)
 
 ### Prerequisites
 ```bash
-node >= 18.x or python >= 3.9
+node >= 18.x
 ```
 
 ### Installation
 ```bash
 # Clone repository
-git clone <your-repo-url>
 cd sago-demo
 # Install dependencies
 npm install
-
-
 ```
 
-### Run Demo
+### Run UI Demo
 ```bash
 npm start
-
-# Open http://localhost:3000
+# Opens http://localhost:3000 - Interactive mockup with sample data
 ```
+
+> **Note**: This runs a React demo that simulates the user experience. No actual AI analysis, API calls, or integrations occur. All data shown is pre-written sample content.
 
 ---
 
@@ -426,21 +424,26 @@ sago-pitch-deck-analyzer/
 
 ## 🚧 Current Implementation Status
 
-**✅ Implemented (Prototype)**
-- React demo UI showing full user flow
-- Sample data for claim extraction and verification
-- Mock integration with Gmail/Slack
-- Personalization logic design
+> **Important**: This is a **UI prototype/mockup** that demonstrates the proposed user experience. The backend intelligence system described in this README is **not implemented**.
 
-**🏗️ Partial Implementation**
-- Claim extraction (prompt engineering complete, needs API integration)
-- Verification logic (framework built, needs live API connections)
+**✅ Actually Implemented**
+- React demo UI (`/sago-demo`) showing complete user flow
+- Sample data structures matching proposed JSON schemas
+- Interactive mockup of all described features
+- Professional UI/UX design with Tailwind CSS
+- Mobile-responsive interface
 
-**📋 Not Yet Implemented (Would build with more time)**
-- Live Gmail/Slack OAuth flow
-- Real-time API calls to Crunchbase, SimilarWeb
-- Vector database for user profile storage
-- Full CRM integration
+**❌ Not Implemented (Requires Development)**
+- **No backend services** - no API endpoints, databases, or server logic
+- **No LLM integration** - no Claude/GPT API connections
+- **No external APIs** - no Crunchbase, SimilarWeb, Gmail, or Slack integrations
+- **No real verification** - all results are pre-written sample data
+- **No personalization engine** - questions are hardcoded for demo
+- **No file processing** - cannot actually upload or analyze PDFs
+- **No authentication** - no OAuth flows or user management
+
+**What the Demo Shows:** Complete user experience as if all features worked  
+**What Actually Works:** Interactive UI walkthrough with mock data only
 
 ---
 
