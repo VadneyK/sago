@@ -3,7 +3,7 @@
 
 **Assignment Submission for Sago**  
 **Use Case**: Pitch Deck Verification & Question Generation  
-**Submitted by**: [Your Name]  
+**Submitted by**: Kentaro Vadney  
 **Date**: December 3, 2024
 
 ---
